@@ -9,7 +9,7 @@ Grand Canyon University
 
 Milestone 2
 
-[https://github.com/devinpuckett4/CST-250-Milestone-1/blob/main/Milestone1.md]
+[https://github.com/devinpuckett4/CST-250-Milestone-2/blob/main/Milestone2.md]
 
 https://www.loom.com/share/3198e704649741169c583cee6daf8717?sid=164b3c4c-f169-44fe-96ff-1ccfe53003ae
 
@@ -125,6 +125,7 @@ I stepped on a bomb in this run and it ends the game. The red message pops, then
 
 
 Figure 6: Screenshot of Error Handling
+
 ![Build success](error.png)
 
 This screenshot shows my game catching a bad command. I typed 111 on purpose, and the app didn’t crash, it told me to enter three parts: row, col, action, with an example. That message comes from the checks I added in the main loop for empty input, token count, and parsing numbers. It reprompts right away, so I can try again without losing my place. This is quick proof that my input validation is working the way it should.
@@ -149,72 +150,142 @@ ADD ON
 Programming Conventions	
 
 1.	Keep files grouped by what they do: Models = data, BLL = game rules, ConsoleApp = prints and runs the game.
-2.	Name things clearly and drop quick comments so future me knows what a method is for.
-3.	Keep the rules out of the UI and out of the models,  the BLL is the brain, the rest is just storage or display.
-4.	Keep methods small and to the point: SetupBombs, CountBombsNearby, VisitCell, ToggleFlag, UseRewardPeek, DetermineGameState.
-5.	Check inputs first and show a friendly message if something’s off, then keep the game going.
+   
+3.	Name things clearly and drop quick comments so future me knows what a method is for.
+   
+5.	Keep the rules out of the UI and out of the models,  the BLL is the brain, the rest is just storage or display.
+   
+7.	Keep methods small and to the point: SetupBombs, CountBombsNearby, VisitCell, ToggleFlag, UseRewardPeek, DetermineGameState.
+   
+9.	Check inputs first and show a friendly message if something’s off, then keep the game going.
 ________________________________________
+
 Computer Specs
+
 •	Windows 10/11 laptop
+
 •	Visual Studio 2022
+
 •	.NET SDK
+
 •	8+ GB RAM
+
 •	Git + GitHub account
+
 ________________________________________
+
 Work Log — Milestone 2
+
 Monday
+
 •	5:45–7:15 PM Set up the solution and projects, started Git, wrote a quick README.
+
 •	7:30–8:30 PM Made BoardModel and CellModel, plus the operations interface.
+
 •	8:40–9:20 PM Got SetupBombs and CountBombsNearby working; first clean build.
+
 Total: 2h 55m
+
 Tuesday
+
 •	5:50–7:10 PM Built PrintAnswers and PrintBoard with labels and borders.
+
 •	7:20–8:40 PM Added the game loop and input checks.
+
 Total: 2h 40m
+
 Wednesday (Discussion Day)
+
 •	6:00–6:40 PM Posted about separating models, rules, and UI; replied to a few classmates.
+
 Total: 40m
+
 Thursday
+
 •	6:10–7:25 PM Added the reward square and UseRewardPeek; blocked flagging on visited cells.
+
 •	7:35–8:20 PM Wrote DetermineGameState; fixed a small counting edge case.
+
 Total: 2h 00m
+
 Friday (Discussion Day)
+
 •	6:15–6:55 PM Discussion replies on testing and input edge cases.
+
 Total: 40m
+
 Saturday
+
 •	10:30–11:30 AM Cleaned comments, updated the README, retook clearer screenshots.
+
 •	11:45–12:25 PM Updated the UML and flowchart to match the code.
+
 Total: 1h 40m
-Sunday (Discussion Day)
+
+Sunday 
+
 •	11:00–11:35 AM Quick follow-ups and feedback on the loop and win/loss checks.
+
 Total: 35m
+
 ________________________________________
+
 Milestone 2 Summary
+
 What I built
+
 •	Random bombs by difficulty and proper neighbor counts
+
 •	Two console views: answer key and gameplay with ?, F, numbers, and bombs
+
 •	Actions: visit, flag/unflag, one-time reward peek
+
 •	Input checks with helpful messages
+
 •	Win/lose checks and a final board reveal
+
 OOP pieces I actually used
+
 •	Abstraction: The interface lists what the game can do
+
 •	Encapsulation: Board and cells hold data; the service changes it
+
 •	Separation: Models = data, BLL = rules, Console = prints and reads
+
 Tests
+
 •	A small xUnit test that makes sure neighbor counts are right and bombs use the sentinel value
+
 ________________________________________
+
 Bug Report
+
 •	Header numbers didn’t line up at first,  fixed spacing
+
 •	Old enum value hanging around,  switched everything to StillPlaying
+
 •	Border neighbor count off by one, fixed the bounds check
+
 •	Extra guardrails, can’t flag visited cells; out-of-bounds moves just show a message
+
 ________________________________________
+
 Follow-Up Questions
+
 1) What was tough?
-Lining up the console grid with the labels took a bit. Also making sure bad input didn’t break the game, things like 111 or letters, needed a few checks and messages. After that, the loop and state checks felt smooth.
+
+Lining up the console grid with the labels took a bit. Also making sure bad input didn’t break the game, things like 111 or letters, needed a few checks and messages. After 
+
+that, the loop and state checks felt smooth.
+
 2) What did I learn?
+
 I learned how splitting data, rules, and UI really does make life easier. I also got a feel for how even one small unit test can help catch mistakes early.
+
 3) How would I improve it?
+
 I would add a flood-fill for empty spaces, a simple menu to set size and difficulty, and a few more tests for win/lose paths. Later, I would love to make a click-based GUI.
+
 4) How does this help at work?
+
 Keeping logic out of the UI makes things easier to test, easier to change, and easier to work on with a team. Small methods and a clear interface really help future me out.
