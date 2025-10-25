@@ -174,7 +174,7 @@ Computer Specs
 
 ________________________________________
 
-Work Log — Milestone 2
+Work Log  Milestone 2
 
 Monday
 
