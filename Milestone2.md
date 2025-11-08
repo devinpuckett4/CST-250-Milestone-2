@@ -11,7 +11,7 @@ Milestone 2
 
 [https://github.com/devinpuckett4/CST-250-Milestone-2/blob/main/Milestone2.md]
 
-https://www.loom.com/share/3198e704649741169c583cee6daf8717?sid=164b3c4c-f169-44fe-96ff-1ccfe53003ae
+https://www.loom.com/share/4b46fd4865bd45638dfe24e7f9b975c0
 
 
 
